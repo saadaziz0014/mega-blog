@@ -25,7 +25,8 @@ class Auth {
 
     async login({ email, password }) {
         try {
-            let data = await this.account.createEmailSession(email, password);
+            let data = await this.account.createEmailPasswordSession(email, password);
+            console.log(data)
             if (data) {
                 return data;
             } else {

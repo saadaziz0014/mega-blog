@@ -38,7 +38,7 @@ class Blog {
             let data = await this.database.updateDocument(
                 constants.appwriteDatabaseID,
                 constants.appwriteBlog,
-                id,
+                $id(id),
                 {
                     title,
                     description,
@@ -62,7 +62,7 @@ class Blog {
             let data = await this.database.updateDocument(
                 constants.appwriteDatabaseID,
                 constants.appwriteBlog,
-                id,
+                $id(id),
                 {
                     isDeleted: true
                 }
@@ -82,7 +82,7 @@ class Blog {
             let data = await this.database.getDocument(
                 constants.appwriteDatabaseID,
                 constants.appwriteBlog,
-                id
+                $id(id)
             )
             if (data) {
                 return data
